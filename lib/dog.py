@@ -18,7 +18,7 @@ APPROVED_BREEDS = [
 # If the breed is invalid, the setter method should print() "Breed must be in list of approved breeds." 
 # The breed must be in the following list of dog breeds:
 class Dog:
-    def __init__(self, name='', breed=''):
+    def __init__(self, name='', breed='Good Dog'):
         self.name = name
         self.breed = breed
 
@@ -27,7 +27,7 @@ class Dog:
         return self._name
     
     def dog_name(self, name):
-        if (isinstance(name, str)) and (len(name) > 1) and len(name) < 25:
+        if (isinstance(name, str)) and (len(name) > 0) and len(name) < 25:
             self._name = name
         else:
             print("Name must be string between 1 and 25 characters.")
@@ -49,11 +49,9 @@ class Dog:
 
 #------------------------
 print("Fido:")
-fido = Dog("Fido")
-# # print(fido.name)
-# #Name must be string between 1 and 25 characters
-# #Breed must be in list of approved breeds.
-
+fido = Dog("")
+# Name must be string between 1 and 25 characters.
+# Breed must be in list of approved breeds.
 # # print(fido.breed)
 # # Name must be string between 1 and 25 characters.
 # # Breed must be in list of approved breeds.
@@ -62,15 +60,19 @@ fido = Dog("Fido")
 # #fido does not meet criteria set by name and breed property (no name and no breed) 
 # # so instance is not being created/allowed
 
+print("Maggie:")
+maggie = Dog(8008)
+# Name must be string between 1 and 25 characters.
+# Breed must be in list of approved breeds.
+
 # #-------------------------
-# # print("Chloe:")
+print("Chloe:")
 chloe = Dog("Chloe")
 chloe.dog_name("Chloe")
-# # chloe.validate_breed("Heeler")
+chloe.validate_breed("Heeler")
 # #Breed must be in list of approved breeds.
 # # print(chloe.breed)
 # # Breed must be in list of approved breeds.
-# # AttributeError: 'Dog' object has no attribute '_breed'
 
 # #chloe meets name property validations but doesn't meet breed property criteria so instance is not being allowed/created
 
